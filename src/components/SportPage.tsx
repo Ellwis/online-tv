@@ -5,6 +5,10 @@ import "node_modules/video-react/dist/video-react.css";
 import ReactPlayer from 'react-player/lazy'
 import Image from 'next/image';
 import Header from './Header/Header';
+// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { TheosPlayer } from '@aka_theos/react-hls-player';
+import toast from 'react-hot-toast';
 
 
 interface DataType {
@@ -28,10 +32,9 @@ const SportPage = () => {
         const response = await axios.get('https://ayas.ir/server/gettv.php?filter=sport');
         const json = await response.data;
         setDatas(json);
-        console.log(json)
       } catch (err) {
-        console.log(err);
-      }
+        toast('something went wrong...');
+      };
     }
     getData();
   }, []);
@@ -66,10 +69,18 @@ const SportPage = () => {
                   url={showData.url}
                   width={'100%'}
                   height={'auto'}
-
                   controls
                   autoplay
                 />
+                {/* <TheosPlayer
+                  // src={"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"}
+                  src={showData.url}
+                  autoPlay={true}
+                  controls
+                  width={'100%'}
+                // height={'100px'}
+
+                />, */}
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
                   <Typography variant='h6'
                     sx={{
@@ -102,13 +113,10 @@ const SportPage = () => {
             border: '1px solid #272727',
             width: { md: '30%', xs: '100%' },
             height: { md: '80vh', xs: '320px' },
-            overflowY: {md:'scroll' , xs : 'scroll'},
+            overflowY: { md: 'scroll', xs: 'scroll' },
             borderRadius: '20px',
             p: 3,
             boxShadow: 3,
-            // "&:hover":{
-            //   overflowY :'scroll',
-            // }
           }}>
 
           {
