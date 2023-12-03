@@ -1,6 +1,10 @@
 @font-face {
   font-family: casa;
+<<<<<<< HEAD
   src: url(../../public/changa.TTF);
+=======
+  src: url(/noor.TTF);
+>>>>>>> 5511ca9789a376ba835b59bddb69c65f4aad6141
 }
 
 
