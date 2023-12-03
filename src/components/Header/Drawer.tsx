@@ -7,34 +7,45 @@ import { Box, Button } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useRouter } from 'next/router';
+
+const headerTitles = [
+  { title: 'ماهواره', url: '/satellite' },
+  { title: 'اختصاصی آیاس', url: '/ayas' },
+  { title: 'فیلم و سریال', url: '/movies' },
+  { title: 'مذهبی', url: '/religious' },
+  { title: 'ورزشی', url: '/sport' },
+  { title: 'صدا و سیما', url: '/irib' },
+  { title: 'صفحه اصلی', url: '/' },
+]
+
 
 function DrawerCustom() {
+  const router = useRouter()
   const [DrawerOpen, setDrawerOpen] = useState(false);
 
 
   const list = (
     <Box
-      sx={{ width: '200px', direction: 'rtl', textAlign: 'right' , bgcolor : 'rgb(26,26,26)' , color : 'white' , height : '100vh'}}
+      sx={{ width: '200px', direction: 'rtl', textAlign: 'right', bgcolor: '#1E2939', color: 'white', height: '100vh' }}
     >
       <List>
-        <ListItem button>
-          <ListItemText sx={{ textAlign: 'center' }} primary="ماهواره" />
-        </ListItem>
-        <ListItem button>
-          <ListItemText sx={{ textAlign: 'center' }} primary="صدا و سیما" />
-        </ListItem>
-        <ListItem button>
-          <ListItemText sx={{ textAlign: 'center' }} primary="ورزشی" />
-        </ListItem>
-        <ListItem button>
-          <ListItemText sx={{ textAlign: 'center' }} primary="مذهبی" />
-        </ListItem>
-        <ListItem button>
-          <ListItemText sx={{ textAlign: 'center' }} primary="فیلم و سریال" />
-        </ListItem>
-        <ListItem button>
-          <ListItemText sx={{ textAlign: 'center' }} primary="اختصاصی یاس" />
-        </ListItem>
+        {
+          headerTitles.map((item, i) => (
+
+            <Link  key={i} href={item.url}>
+              <ListItem button  sx={{ bgcolor : router.pathname === item.url ? '#9FEF00' : ''}}>
+                <ListItemText
+                  sx={{ textAlign: 'center'}}
+                  primary={item.title}
+                />
+              </ListItem>
+            </Link>
+
+          )
+
+          )
+        }
       </List>
     </Box>
   );

@@ -1,14 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import SportPage from '../components/SportPage'
-
+import Landing from '@/components/landing/Landing'
+import React from 'react'
 
 export default function Home() {
   return (
-    <>
-      <SportPage />
-    </>
+    <Landing />
   )
 }
+
+
+

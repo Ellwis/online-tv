@@ -1,18 +1,19 @@
 import { Box, Button, TextField, Typography, } from "@mui/material";
-import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
-import TemporaryDrawer from "./Drawer";
 import DrawerCustom from "./Drawer";
+import { useRouter } from "next/router";
 
 const Header: FC = () => {
+  const router = useRouter()
   const headerTitles = [
-    {title : 'ماهواره', url : '/'} ,
-    {title : 'اختصاصی یاس', url : '/'} ,
-    {title : 'فیلم و سریال', url : '/'} ,
-    {title : 'مذهبی', url : '/'} ,
-    {title : 'ورزشی', url : '/'} ,
-    {title : 'صدا و سیما', url : '/'} ,
+    { title: 'ماهواره', url: '/satellite' },
+    { title: 'اختصاصی آیاس', url: '/ayas' },
+    { title: 'فیلم و سریال', url: '/movies' },
+    { title: 'مذهبی', url: '/religious' },
+    { title: 'ورزشی', url: '/sport' },
+    { title: 'صدا و سیما', url: '/irib' },
+    { title: 'صفحه اصلی', url: '/' },
   ]
 
 
@@ -28,36 +29,37 @@ const Header: FC = () => {
         alignItems: 'center',
         mx: 'auto',
         zIndex: '111',
-        bgcolor: 'rgb(26,26,26)',
+        bgcolor: '#101927',
         boxShadow: 3,
 
 
       }}>
         <Box
-
           sx={{
-            width: { md: '25%', xs: '45%' },
-            textAlign: { md: 'left', xs: 'left' },
-            cursor: 'pointer'
-          }} >
-          {/* <Link href={'/'}>
-            <Image alt="logo" src={'/logo.png'} height={24} width={159} />
-
-          </Link> */}
-
-        </Box>
-        <Box
-          sx={{
-            width: '70%',
+            width: '90%',
+            mx: 'auto',
             textAlign: 'center',
             display: 'flex',
             justifyContent: 'space-evenly',
             visibility: { md: 'visible', xs: 'hidden' }
           }}
-        >{
-            headerTitles.map((item, i)  => (
+
+        >
+          {
+            headerTitles.map((item, i) => (
               <>
-                <Link key={i} href={item.url}><Typography sx={{ cursor: 'pointer' }}>{item.title}</Typography></Link>
+                <Link key={i} href={item.url}>
+                  <Typography
+                    sx={{
+                      textAlign: 'center',
+                      transition: '500ms',
+                      cursor: 'pointer',
+                      color: router.pathname === item.url ? '#9FEF00' : 'white',
+                      "&:hover": { color: '#9FEF00' }
+                    }}>
+                    {item.title}
+                  </Typography>
+                </Link>
 
               </>
 
@@ -69,11 +71,11 @@ const Header: FC = () => {
         <Box
           sx={{
             width: '25%',
-            display: 'flex',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            display: { md: 'none', xs: 'block' },
           }}
         >
-          <Box sx={{ display: { md: 'none', xs: 'block' }, }}>
+          <Box sx={{ display: { md: 'none', xs: 'block' } }}>
             <DrawerCustom />
           </Box>
 
