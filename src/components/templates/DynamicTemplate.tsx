@@ -1,4 +1,4 @@
-import Header from "@/components/header/Header"
+import HeaderComponentfrom "@/components/header/Header"
 import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
@@ -50,7 +50,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
 
   return (
     <>
-      <Header />
+      <HeaderComponent/>
       <Link href={`/${link}`}><Button sx={{ textAlign: 'left', m: { xs: 3, md: '20px 80px' }, color: 'white' }} >بازگشت </Button></Link>
 
       <Box

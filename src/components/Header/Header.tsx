@@ -3,7 +3,7 @@ import Link from "next/link";
 import DrawerCustom from "./Drawer";
 import { useRouter } from "next/router";
 
-const Header = () => {
+const HeaderComponent = () => {
   const router = useRouter()
   const headerTitles = [
     { title: 'ماهواره', url: '/satellite' },
@@ -89,4 +89,4 @@ const Header = () => {
 }
 
 
-export default Header
+export default HeaderComponent
