@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import Header from '../header/Header';
+import Header from '@/components/header/Header';
 import ImagesListSection from './ImagesList';
 
 

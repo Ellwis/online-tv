@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import "node_modules/video-react/dist/video-react.css";
 import ReactPlayer from 'react-player/lazy'
 import Image from 'next/image';
-import Header from '../header/Header';
+import Header from '@/components/header/Header';
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import toast from 'react-hot-toast';
