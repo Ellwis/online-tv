@@ -59,7 +59,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
           height: { xs: 'auto', md: 'auto' },
           width: { md: '90%', xs: '90%' },
           alignItems: 'center',
-          p: 5,
+          p: {md :5 , xs : 3 },
           mx: 'auto',
           // border: '1px solid #9FEF00',
           borderRadius: '10px',
@@ -72,12 +72,12 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
             <Box>
               <Box>
                 <Box sx={{
-                  width: '90%',
+                  width:{ md :'70%' , xs : '100%'},
                   mx: 'auto'
                 }}>
                   <ReactPlayer
                     url={detail.channelurl}
-                    width={'70%'}
+                    width={'100%'}
                     height={'auto'}
                     style={{ margin: 'auto' }}
                     controls

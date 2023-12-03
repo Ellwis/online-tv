@@ -1,11 +1,11 @@
 
-import SatelliteComponent from '@/components/satellite/SatelliteComponent'
+import ReligiousComponent from '@/components/religious/ReligiousComponent'
 
 
-export default function SatellitePage() {
+export default function ReligiousPage() {
   return (
     <>
-      <SatelliteComponent />
+      <ReligiousComponent />
     </>
   )
 }

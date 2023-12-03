@@ -2,13 +2,13 @@ import DynamicTemplate from "@/components/templates/DynamicTemplate";
 
 
 
-const DynamicRouteSatellite = () => {
+const DynamicRouteReligious = () => {
 
   return (
     <>
       <DynamicTemplate
-        reqURL="https://ayas.ir/server/gettv.php?filter=sat"
-        link="satellite"
+        reqURL="https://ayas.ir/server/gettv.php?filter=mazhabi"
+        link="religious"
 
       />
 
@@ -17,4 +17,4 @@ const DynamicRouteSatellite = () => {
 
 }
 
-export default DynamicRouteSatellite
+export default DynamicRouteReligious
