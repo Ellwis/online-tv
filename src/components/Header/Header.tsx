@@ -1,6 +1,5 @@
-import { Box, Button, TextField, Typography, } from "@mui/material";
+import { Box,  Typography } from "@mui/material";
 import Link from "next/link";
-import { FC, useState } from "react";
 import DrawerCustom from "./Drawer";
 import { useRouter } from "next/router";
 
@@ -48,8 +47,9 @@ const Header = () => {
           {
             headerTitles.map((item, i) => (
               <>
-                <Link key={i} href={item.url}>
+                <Link href={item.url}>
                   <Typography
+                    key={i}
                     sx={{
                       textAlign: 'center',
                       transition: '500ms',
