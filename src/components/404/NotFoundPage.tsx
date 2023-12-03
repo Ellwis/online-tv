@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material"
 import Link from "next/link"
-import Header from "../header/Header"
+import Header from "../header-section/Header"
 
 
 
