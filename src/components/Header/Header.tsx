@@ -55,7 +55,6 @@ const Header = () => {
                       transition: '500ms',
                       cursor: 'pointer',
                       color: router.pathname === item.url ? '#9FEF00' : 'white',
-                      color : 'white' ,
                       "&:hover": { color: '#9FEF00' }
                     }}>
                     {item.title}
