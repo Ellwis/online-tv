@@ -4,8 +4,8 @@ import { FC, useState } from "react";
 import DrawerCustom from "./Drawer";
 import { useRouter } from "next/router";
 
-const Header: FC = () => {
-  // const router = useRouter()
+const Header = () => {
+  const router = useRouter()
   const headerTitles = [
     { title: 'ماهواره', url: '/satellite' },
     { title: 'اختصاصی آیاس', url: '/ayas' },
@@ -54,7 +54,7 @@ const Header: FC = () => {
                       textAlign: 'center',
                       transition: '500ms',
                       cursor: 'pointer',
-                      // color: router.pathname === item.url ? '#9FEF00' : 'white',
+                      color: router.pathname === item.url ? '#9FEF00' : 'white',
                       color : 'white' ,
                       "&:hover": { color: '#9FEF00' }
                     }}>
