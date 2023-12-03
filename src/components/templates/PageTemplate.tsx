@@ -2,9 +2,8 @@ import { Box, CircularProgress, Divider, Grid, Typography } from '@mui/material'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import "node_modules/video-react/dist/video-react.css";
-import ReactPlayer from 'react-player/lazy'
 import Image from 'next/image';
-import HeaderComponentfrom '@/components/header/Header';
+import HeaderComponent from '@/components/header/Header';
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import toast from 'react-hot-toast';

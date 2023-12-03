@@ -1,4 +1,4 @@
-import HeaderComponentfrom "@/components/header/Header"
+import HeaderComponent from "@/components/header/Header"
 import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
