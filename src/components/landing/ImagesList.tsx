@@ -64,7 +64,8 @@ const ImagesListSection = () => {
           {itemData.map((item) => (
             <Link href={item.url}>
               <Box
-                sx={{ filter: 'blur(1px) brightness(30%)', transition: '500ms', '&:hover': { filter: 'blur(0px)' } }}
+                sx={{ filter: 'blur(1px) brightness(30%)', transition: '500ms',
+                 '&:hover': { filter: 'blur(0px)' } }}
               >
                 <ImageListItem
                   key={item.img}
@@ -72,6 +73,8 @@ const ImagesListSection = () => {
                   <img
                     src={`${item.img}`}
                     alt={item.title}
+                    width={'100%'}
+                    height={'100%'}
                   />
                   <ImageListItemBar sx={{ color: 'white', textAlign: 'center', fontSize: '30px' }} position="top" title={item.title} />
                 </ImageListItem>
