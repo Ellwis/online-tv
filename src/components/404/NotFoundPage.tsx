@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material"
 import Header from "../header/Header"
 
 
+
 const NotFoundPage = () => {
   return (
     <Box sx={{height: '100vh' , overflow :'hidden'}}> 
