@@ -9,6 +9,7 @@ const NotFoundPage = () => {
     <Box sx={{ height: '100vh', overflow: 'hidden' }}>
       <Box>
         <Header />
+        
         <Typography sx={{ textAlign: 'center', mt: '20%', fontSize: { xs: '16px', md: '26px' } }}>404 - صفحه مورد نظر یافت نشد</Typography>
         <Link href={'/'}>  <Typography textAlign={'center'}>بازگشت به صفحه اصلی</Typography></Link>
       </Box>
