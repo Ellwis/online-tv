@@ -81,7 +81,6 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                     height={'auto'}
                     style={{ margin: 'auto' }}
                     controls
-                    autoplay
                   />
 
                 </Box>

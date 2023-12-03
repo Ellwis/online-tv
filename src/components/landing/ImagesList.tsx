@@ -60,7 +60,7 @@ const ImagesListSection = () => {
 
         </ImageList>
         {/* Mobile */}
-        <ImageList sx={{display :{xs : 'block' , md : 'none'} }} variant="masonry" cols={2} gap={20}>
+        <ImageList sx={{display :{xs : 'block' , md : 'none'} }} variant="masonry" cols={2} gap={10}>
           {itemData.map((item) => (
             <Link href={item.url}>
               <Box
