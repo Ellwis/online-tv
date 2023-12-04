@@ -30,17 +30,18 @@ const itemData = [
 const ImagesListSection = () => {
   return (
     <Box sx={{
-       backgroundImage : {md : 'url(/bg5.gif)' , xs : 'none'},
-       backgroundRepeat : 'no-repeat',
-        backgroundSize : 'cover'
+      backgroundImage: { md: 'url(/bg5.gif)', xs: 'none' },
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      pt: { md: 5, xs: 0 },
     }}>
       <Box sx={{ pt: 5, width: { xs: '90%', md: '80%' }, mx: 'auto', textAlign: 'right', height: { md: '100vh' } }}>
         {/* Desktop */}
-        <ImageList sx={{display :{xs : 'none' , md : 'block'} }} variant="masonry" cols={4} gap={20}>
+        <ImageList sx={{ display: { xs: 'none', md: 'block' } }} variant="masonry" cols={4} gap={20}>
           {itemData.map((item) => (
             <Link href={item.url}>
               <Box
-                sx={{ filter: 'blur(1px) brightness(30%)', transition: '500ms', '&:hover': { filter: 'blur(0px)', ml: 1 } }}
+                sx={{ transition: '500ms', '&:hover': { filter: 'blur(3px) brightness(80%)' }, width: '90%' }}
               >
                 <ImageListItem
                   key={item.img}
@@ -60,12 +61,14 @@ const ImagesListSection = () => {
 
         </ImageList>
         {/* Mobile */}
-        <ImageList sx={{display :{xs : 'block' , md : 'none'} }} variant="masonry" cols={2} gap={10}>
+        <ImageList sx={{ display: { xs: 'block', md: 'none' } }} variant="masonry" cols={2} gap={10}>
           {itemData.map((item) => (
             <Link href={item.url}>
               <Box
-                sx={{ filter: 'blur(1px) brightness(30%)', transition: '500ms',
-                 '&:hover': { filter: 'blur(0px)' } }}
+                sx={{
+                  transition: '500ms',
+                  '&:hover': { filter: 'blur(3px) brightness(30%' }
+                }}
               >
                 <ImageListItem
                   key={item.img}

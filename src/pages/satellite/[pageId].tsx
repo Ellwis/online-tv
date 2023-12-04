@@ -7,8 +7,8 @@ const DynamicRouteIrib = () => {
   return (
     <>
       <DynamicTemplate
-        reqURL="https://ayas.ir/server/gettv.php?filter=tv"
-        link="irib"
+        reqURL="https://ayas.ir/server/gettv.php?filter=sat"
+        link="satellite"
 
       />
 

@@ -31,6 +31,7 @@ const Header: FC = () => {
         zIndex: '111',
         bgcolor: '#101927',
         boxShadow: 3,
+        position : 'fixed'
 
 
       }}>

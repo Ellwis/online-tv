@@ -51,68 +51,73 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
   return (
     <>
       <Header />
-      <Link href={`/${link}`}><Button sx={{ textAlign: 'left', m: { xs: 3, md: '20px 80px' }, color: 'white' }} >بازگشت </Button></Link>
-
-      <Box
-        sx={{
-          backgroundColor: '#1E2939',
-          height: { xs: 'auto', md: 'auto' },
-          width: { md: '90%', xs: '90%' },
-          alignItems: 'center',
-          p: {md :5 , xs : 3 },
-          mx: 'auto',
-          // border: '1px solid #9FEF00',
-          borderRadius: '10px',
-          textAlign: 'center',
-          boxShadow: 3,
-          display: detail?.channelurl ? { xs: 'block', md: "block" } : { xs: 'none', md: "block" }
-        }}>
-        {
-          detail?.channelurl ?
-            <Box>
+      <Box sx={{ height: '100vh', pt : 8 }}>
+        <Link href={`/${link}`}>
+          <Button sx={{ textAlign: 'left', m: { xs: 3, md: '20px 80px' }, color: 'white' }} >بازگشت </Button>
+        </Link>
+        <Box
+          sx={{
+            backgroundColor: '#1E2939',
+            // height: { xs: 'auto', md: 'auto' },
+            width: { md: '90%', xs: '90%' },
+            alignItems: 'center',
+            p: { md: 5, xs: 3 },
+            mx: 'auto',
+            // border: '1px solid #9FEF00',
+            borderRadius: '10px',
+            textAlign: 'center',
+            display: detail?.channelurl ? { xs: 'block', md: "block" } : { xs: 'none', md: "block" }
+          }}>
+          {
+            detail?.channelurl ?
               <Box>
-                <Box sx={{
-                  width:{ md :'70%' , xs : '100%'},
-                  mx: 'auto'
-                }}>
-                  <ReactPlayer
-                    url={detail.channelurl}
-                    width={'100%'}
-                    height={'auto'}
-                    style={{ margin: 'auto' }}
-                    controls
-                  />
+                <Box>
+                  <Box sx={{
+                    width: { md: '50%', xs: '100%' },
+                    // height : '100vh' ,
+                    mx: 'auto'
+                  }}>
+                    <ReactPlayer
+                      url={detail.channelurl}
+                      width={'100%'}
+                      height={'auto'}
+                      style={{ margin: 'auto' }}
+                      controls
+                    />
 
+                  </Box>
+
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Typography variant='h6'
+                      sx={{
+                        direction: 'rtl',
+                        textAlign: 'right',
+                        m: 5,
+                        fontSize: '16px',
+                        width: '50%'
+                      }}>{detail?.title}</Typography>
+
+                    {detail?.urlImage.length !== 0 ?
+                      <img src={detail?.urlImage} width={40} height={40} alt="logo" style={{ borderRadius: '50%' }} />
+                      :
+                      null}
+                  </Box>
                 </Box>
 
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-                <Typography variant='h6'
-                  sx={{
-                    direction: 'rtl',
-                    textAlign: 'right',
-                    m: 5,
-                    fontSize: '16px'
-                  }}>{detail?.title}</Typography>
 
-                {detail?.urlImage.length !== 0 ?
-                  <img src={detail?.urlImage} width={40} height={40} alt="logo" style={{ borderRadius: '50%' }} />
-                  :
-                  null}
+              :
+              <Box sx={{ mt: '10%', display: { xs: 'none', md: "block" }, height: '40vh' }}>
+
+                <Image src={'/nf.svg'} height={150} width={150} alt='' objectFit="contain" />
+                <Typography variant='h6'> موردی برای نمایش وجود ندارد </Typography>
               </Box>
 
-            </Box>
+          }
+        </Box>
 
-            :
-            <Box sx={{ mt: '10%', display: { xs: 'none', md: "block" }, height: '40vh' }}>
 
-              <Image src={'/nf.svg'} height={150} width={150} alt='' objectFit="contain" />
-              <Typography variant='h6'> موردی برای نمایش وجود ندارد </Typography>
-            </Box>
-
-        }
       </Box>
-
     </>
   )
 

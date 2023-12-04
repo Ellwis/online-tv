@@ -3,7 +3,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -33,10 +33,10 @@ function DrawerCustom() {
         {
           headerTitles.map((item, i) => (
 
-            <Link  key={i} href={item.url}>
-              <ListItem button  sx={{ bgcolor : router.pathname === item.url ? '#9FEF00' : ''}}>
+            <Link key={i} href={item.url}>
+              <ListItem button sx={{ bgcolor: router.pathname === item.url ? '#9FEF00' : '' }}>
                 <ListItemText
-                  sx={{ textAlign: 'center'}}
+                  sx={{ textAlign: 'center' }}
                   primary={item.title}
                 />
               </ListItem>
@@ -52,12 +52,15 @@ function DrawerCustom() {
 
   return (
     <Box>
-      <Button
+      <Typography
         onClick={() => setDrawerOpen(true)}
-        variant='text'
-      >
-        <Image src={'/menu.svg'} height={20} width={30} alt='' />
-      </Button>
+      >{
+          DrawerOpen ?
+          <Image src={'/close.svg'} height={15} width={15} alt=''/>
+          : 
+          <Image src={'/menu.svg'} height={15} width={20} alt='' />
+      }
+      </Typography>
       <Drawer open={DrawerOpen} onClose={() => setDrawerOpen(false)}>
         {list}
       </Drawer>

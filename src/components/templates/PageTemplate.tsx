@@ -29,6 +29,10 @@ interface Input {
 
 const TemplatePage = ({ reqURL , bgImage , link} :Input) => {
   const [datas, setDatas] = useState<DataType[]>([]);
+   const textSpliter = (text : string)=>{
+    return text.length > 40 ? text.slice(40) + '...' : text
+
+   }
 
   useEffect(() => {
     const getData = async () => {
@@ -51,72 +55,25 @@ const TemplatePage = ({ reqURL , bgImage , link} :Input) => {
       <Header />
       <Box
         sx={{
-          p: 3,
+          py : 10,
+          px : 3,
+          minHeight : '100vh' ,
+          // p: 3,
           display: { md: 'flex', xs: 'block' },
           justifyContent: 'space-between',
           flexDirection: { xs: 'row-reverse', md: 'row-reverese' },
-          backgroundImage : `url(${bgImage})`,
+          backgroundImage : {md : `url(${bgImage})` , xs : ''},
           backgroundRepeat : 'no-repeat',
           backgroundSize : 'cover'
         }}>
-        {/* <Box
-          sx={{
-            backgroundColor: '#1E2939',
-            height: { xs: 'auto', md: 'auto' },
-            width: { md: '68%', xs: '100%' },
-            alignItems: 'center',
-            p: 5,
-            border: '1px solid #9FEF00',
-            borderRadius: '10px',
-            textAlign: 'center',
-            boxShadow: 3,
-            display: showData.url ? { xs: 'block', md: "block" } : { xs: 'none', md: "block" }
-          }}>
-          {
-            showData.url ?
-              <Box>
-                <ReactPlayer
-                  url={showData.url}
-                  width={'100%'}
-                  height={'auto'}
-                  controls
-                  autoPlay
-                />
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-                  <Typography variant='h6'
-                    sx={{
-                      direction: 'rtl',
-                      textAlign: 'right',
-                      m: 5,
-                      fontSize: '16px'
-                    }}>{showData.name}</Typography>
-                  {
-                    showData.img.length !== 0 ?
-                      <img src={showData.img} width={30} height={30} alt='logo' style={{ borderRadius: '50px', marginLeft: 10, alignItems: 'center' }} />
-                      : null
-                  }
-
-                </Box>
-              </Box>
-              :
-              <Box sx={{ mt: '20%', display: { xs: 'none', md: "block" } }}>
-
-                <Image src={'/nf.svg'} height={150} width={150} alt='' objectFit="contain" />
-                <Typography variant='h6'> موردی برای نمایش وجود ندارد </Typography>
-              </Box>
-
-          }
-        </Box> */}
         <Box
           sx={{
             mt: { xs: 3, md: 0 },
             backgroundColor: 'rgba(16,25,39 , 0.8)',
-            border: '1px solid #9FEF00',
             width: { md: '100%', xs: '100%' },
-            height: { md: '80vh', xs: '80vh' },
-            overflowY: { md: 'scroll', xs: 'scroll' },
+            height: { md: 'auto', xs: 'auto' },
             borderRadius: '10px',
-            p: 3,
+            p: {md : 3 , xs : 0},
             boxShadow: 3,
           }}>
 
@@ -129,31 +86,31 @@ const TemplatePage = ({ reqURL , bgImage , link} :Input) => {
             {
               datas.length !== 0 ?
                 datas.map((data, i) => (
-                  <Grid item xs={6} md={2} key={i} sx={{ height: '100px', my: 2 }}>
+                  <Grid item xs={12} md={2} key={i} sx={{ height: {md : '100px' , xs  : '30px' }, my: 2 }}>
                     <Link href={`${link}/${data.id}`}>
                       <Box
                         sx={{
                           borderRadius: '10px',
-                          height: '100px',
+                          height: {md : '100px' , xs : '50px'},
                           border: '1px solid white',
                           overflow: 'hidden',
                           transition: '500ms',
                           width: '100%',
-                          textAlign: 'center',
+                          textAlign: {xs : 'right' , md : 'center'},
+                          alignItems :'center' ,
                           cursor: 'pointer',
-                          pt: 5,
+                          pt: {md : 5 , xs : 1},
                           '&:hover': {
                             border: '1px solid #9FEF00',
-                            boxShadow: 3,
                             bgcolor : '#101927'
                           },
-                          flexGrow: 1,
+                          // flexGrow: 1,
                           direction: 'rtl'
                         }}
                         >
                         <Box>
-                          <Typography sx={{fontSize : {xs : '10px' , md : '12px'}}}>
-                            <span style={{ margin: '0px 3px' }}>
+                          <Typography sx={{fontSize : {xs : '14px' , md : '13px'} , mt :{xs : 1 , md : 0}  , mx: {xs  : 3 , md : 0}}}>
+                            <span style={{ margin: '0px 5px' }}>
                               {
                                 data.isOnline === '1' ?
                                   <Image src={'/green.png'} height={10} width={10} alt='green' />
