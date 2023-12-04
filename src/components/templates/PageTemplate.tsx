@@ -21,7 +21,6 @@ interface DataType {
 }
 
 interface Input {
-  // imgURL :string,
   reqURL : string,
   bgImage : string,
   link : string
@@ -30,7 +29,7 @@ interface Input {
 const TemplatePage = ({ reqURL , bgImage , link} :Input) => {
   const [datas, setDatas] = useState<DataType[]>([]);
    const textSpliter = (text : string)=>{
-    return text.length > 40 ? text.slice(40) + '...' : text
+    return text.length > 30 ? text.slice(1,30) + '...' : text
 
    }
 
@@ -121,7 +120,8 @@ const TemplatePage = ({ reqURL , bgImage , link} :Input) => {
                               }
 
                             </span>
-                            {data.title}
+                            {textSpliter(data.title)}
+                            {/* {data.title} */}
                           </Typography>
                         </Box>
                       </Box>
@@ -132,7 +132,7 @@ const TemplatePage = ({ reqURL , bgImage , link} :Input) => {
 
                 ))
                 :
-                <Box sx={{ width: '50px', mx: 'auto' , mt:"20%"}}>
+                <Box sx={{ width: '50px', mx: 'auto' , mt:"20%" , height : '150px'}}>
                   <CircularProgress color="primary" />
                 </Box>
             }

@@ -25,15 +25,21 @@ const itemData = [
     url: '/movies'
 
   },
+  {
+    img: '5.jpg',
+    title: 'ماهواره',
+    url: '/satellite'
+
+  },
 ];
 
 const ImagesListSection = () => {
   return (
     <Box sx={{
-      backgroundImage: { md: 'url(/bg5.gif)', xs: 'none' },
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      pt: { md: 5, xs: 0 },
+      // backgroundImage: { md: 'url(https://giphy.com/embed/kg19fN5BXbZGIDznzG)', xs: 'none' },
+      // backgroundRepeat: 'no-repeat',
+      // backgroundSize: 'cover',
+      pt: { md: 5, xs: 5 },
     }}>
       <Box sx={{ pt: 5, width: { xs: '90%', md: '80%' }, mx: 'auto', textAlign: 'right', height: { md: '100vh' } }}>
         {/* Desktop */}
