@@ -72,8 +72,9 @@ const Header: FC = () => {
         <Box
           sx={{
             width: '25%',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-start',
             display: { md: 'none', xs: 'block' },
+            textAlign :'right'
           }}
         >
           <Box sx={{ display: { md: 'none', xs: 'block' } }}>
