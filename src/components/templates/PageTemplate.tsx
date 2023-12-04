@@ -2,7 +2,6 @@ import { Box, CircularProgress, Divider, Grid, Typography } from '@mui/material'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import "node_modules/video-react/dist/video-react.css";
-import ReactPlayer from 'react-player/lazy'
 import Image from 'next/image';
 import Header from '@/components/header-section/Header';
 // import { ToastContainer, toast } from 'react-toastify';
@@ -74,7 +73,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
       <Header />
       <Box
         sx={{
-          py: 5,
+          py: 2,
           px: 3,
           minHeight: '100vh',
           display: { md: 'flex', xs: 'block' },
