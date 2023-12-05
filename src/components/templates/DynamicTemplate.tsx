@@ -1,4 +1,5 @@
 import Header from "@/components/header-section/Header"
+import { useStore } from "@/redux/store";
 import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
@@ -7,6 +8,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from 'react'
 import toast from "react-hot-toast";
 import ReactPlayer from "react-player";
+
+
 
 
 
@@ -27,6 +30,7 @@ interface InputTypes {
 
 const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
   const [datas, setDatas] = useState<DataType[]>([]);
+  // const allDatas = useStore((data)=>data.datasList)
   const router = useRouter()
   const { pageId } = router.query
   const detail = datas.find((item): any => pageId == item.id ? item : '')
@@ -37,8 +41,9 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
       try {
         const response = await axios.get(`${reqURL}`);
         const json = await response.data;
+        // useStore.setState({ datasList : json})
         setDatas(json);
-        console.log(json)
+        // console.log(allDatas)
 
       } catch (err) {
         toast.error('مشکل در دریافت اطلاعات');
@@ -51,7 +56,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
   return (
     <>
       <Header />
-      <Box sx={{ height: '100vh', pt : 8 }}>
+      <Box sx={{ height: '100vh', pt: 8 }}>
         <Link href={`/${link}`}>
           <Button sx={{ textAlign: 'left', m: { xs: 3, md: '20px 80px' }, color: 'white' }} >بازگشت </Button>
         </Link>
@@ -59,7 +64,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
           sx={{
             backgroundColor: '#1E2939',
             // height: { xs: 'auto', md: 'auto' },
-            width: { md: '90%', xs: '90%' },
+            width: { md: '90%', xs: '100%' },
             alignItems: 'center',
             p: { md: 5, xs: 3 },
             mx: 'auto',
@@ -83,6 +88,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                       height={'auto'}
                       style={{ margin: 'auto' }}
                       controls
+                      onError={()=> toast.error('مشکل در بارگذاری ...')}
                     />
 
                   </Box>
@@ -93,7 +99,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         direction: 'rtl',
                         textAlign: 'right',
                         m: 5,
-                        fontSize: '16px',
+                        fontSize: {md : '16px' , xs : '12px'},
                         width: '50%'
                       }}>{detail?.title}</Typography>
 

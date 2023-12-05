@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Divider, Grid, Typography } from '@mui/material'
+import { Box, CircularProgress, Grid, Typography } from '@mui/material'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import "node_modules/video-react/dist/video-react.css";
@@ -19,7 +19,6 @@ interface DataType {
   isOnline: string,
   type: string,
 }
-
 interface Input {
   reqURL: string,
   bgImage: string,
@@ -30,15 +29,14 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
   const [datas, setDatas] = useState<DataType[]>([]);
   const router = useRouter()
   const query = router.pathname
-
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(`${reqURL}`);
         const json = await response.data;
         setDatas(json);
-        console.log(query)
-      } catch (err) {
+        console.log(json)
+      } catch (err: unknown) {
         toast.error('مشکل در دریافت اطلاعت');
       };
     }
@@ -47,7 +45,6 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
 
   const textSpliter = (text: string) => {
     return text.length > 30 ? text.slice(1, 30) + '...' : text
-
   }
   const titleSelector = (item: string) => {
     switch (item) {
@@ -67,7 +64,6 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
         return ''
     }
   }
-
   return (
     <>
       <Header />
@@ -93,11 +89,11 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
             p: { md: 3, xs: '30px 0px' },
           }}>
 
-            <Typography
-              variant='h4'
-              sx={{ textAlign: 'right',mb:3, visibility: { xs: 'visible', md: 'hidden' } }}>
-              {titleSelector(query)}
-            </Typography>
+          <Typography
+            variant='h4'
+            sx={{ textAlign: 'right', my: 3, visibility: { xs: 'visible', md: 'hidden' } }}>
+            {titleSelector(query)}
+          </Typography>
           <Grid
             container
             rowSpacing={1}
@@ -105,8 +101,13 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
 
           >
             {
+              
+            }
+            {
               datas.length !== 0 ?
-                datas.map((data, i) => (
+                datas
+                .filter((data)=>data.type === "m3u8" || data.type === 'mp4')
+                .map((data, i) => (
                   <Grid item xs={12} md={2} key={i} sx={{ height: { md: '100px', xs: '30px' }, my: 2 }}>
                     <Link href={`${link}/${data.id}`}>
                       <Box
