@@ -21,7 +21,7 @@ interface DataType {
 }
 interface Input {
   reqURL: string,
-  bgImage: string,
+  bgImage?: string,
   link: string
 }
 
@@ -44,7 +44,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
   }, []);
 
   const textSpliter = (text: string) => {
-    return text.length > 30 ? text.slice(1, 30) + '...' : text
+    return text.length > 30 ? text.slice(0, 30) + '...' : text
   }
   const titleSelector = (item: string) => {
     switch (item) {
@@ -69,21 +69,24 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
       <Header />
       <Box
         sx={{
-          py: 2,
-          px: 3,
+          py: {md: 0 , xs : 2},
+          px: {md: 0, xs : 1},
           minHeight: '100vh',
           display: { md: 'flex', xs: 'block' },
           justifyContent: 'space-between',
           flexDirection: { xs: 'row-reverse', md: 'row-reverese' },
-          backgroundImage: { md: `url(${bgImage})`, xs: '' },
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
+          bgcolor : 'linear-gradient(126deg, #101927 0%, #111d2e 46%, #312771 100%)'
+
+
+          // backgroundImage: { md: `url(bg.jpg)`, xs: '' },
+          // backgroundRepeat: 'no-repeat',
+          // backgroundSize: 'cover',
+          // backgroundPositionX : '60%'
         }}>
         <Box
           sx={{
             my: { xs: 3, md: 0 },
             width: { md: '100%', xs: '100%' },
-            height: { md: 'auto', xs: 'auto' },
             borderRadius: '10px',
             bgcolor: 'rgba(16,25,39 , 0.8)',
             p: { md: 3, xs: '30px 0px' },
@@ -101,19 +104,16 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
 
           >
             {
-              
-            }
-            {
               datas.length !== 0 ?
                 datas
                 .filter((data)=>data.type === "m3u8" || data.type === 'mp4')
                 .map((data, i) => (
-                  <Grid item xs={12} md={2} key={i} sx={{ height: { md: '100px', xs: '30px' }, my: 2 }}>
+                  <Grid item xs={12} md={2} key={i} sx={{ height: { md: '150px', xs: '30px' }, my: 2 }}>
                     <Link href={`${link}/${data.id}`}>
                       <Box
                         sx={{
                           borderRadius: '10px',
-                          height: { md: '100px', xs: '50px' },
+                          height: { md: '150px', xs: '50px' },
                           border: '1px solid white',
                           overflow: 'hidden',
                           transition: '500ms',
@@ -123,8 +123,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
                           cursor: 'pointer',
                           pt: { md: 5, xs: 1 },
                           '&:hover': {
-                            border: '1px solid #9FEF00',
-                            bgcolor: '#0b121e'
+                            bgcolor: '#9FEF00'
                           },
                           direction: 'rtl'
                         }}
@@ -132,11 +131,11 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
                         <Box>
                           <Typography
                             sx={{
-                              fontSize: { xs: '14px', md: '13px' },
-                              mt: { xs: 1, md: 0 },
+                              fontSize: { xs: '14px', md: '16px' },
+                              mt: { xs: 1, md: 2 },
                               mx: { xs: 3, md: 0 }
                             }}>
-                            <span style={{ margin: '0px 5px' }}>
+                            <span style={{ margin: '0px 10px' }}>
                               {
                                 data.isOnline === '1' ?
                                   <Image src={'/green.png'} height={10} width={10} alt='green' />
