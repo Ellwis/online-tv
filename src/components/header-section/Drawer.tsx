@@ -27,14 +27,14 @@ function DrawerCustom() {
 
   const list = (
     <Box
-      sx={{ width: '200px', direction: 'rtl', textAlign: 'right', bgcolor: '#1E2939', color: 'white', height: '100vh' }}
+      sx={{ width: '200px', direction: 'rtl', textAlign: 'right', bgcolor: 'white', color: 'black', height: '100vh' }}
     >
       <List>
         {
           headerTitles.map((item, i) => (
 
             <Link key={i} href={item.url}>
-              <ListItem button sx={{ bgcolor: router.pathname === item.url ? '#9FEF00' : '' }}>
+              <ListItem button sx={{ bgcolor: router.pathname === item.url ? '#ED0F50' : '' }}>
                 <ListItemText
                   sx={{ textAlign: 'center' }}
                   primary={item.title}

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import "node_modules/video-react/dist/video-react.css";
 import Image from 'next/image';
 import Header from '@/components/header-section/Header';
+import {textSpliter ,titleSelector} from './functions'
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import toast from 'react-hot-toast';
@@ -41,43 +42,18 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
       };
     }
     getData();
-  }, []);
+  }, [datas]);
 
-  const textSpliter = (text: string) => {
-    return text.length > 30 ? text.slice(0, 30) + '...' : text
-  }
-  const titleSelector = (item: string) => {
-    switch (item) {
-      case '/irib':
-        return 'صدا و سیما'
-      case '/satellite':
-        return 'ماهواره'
-      case '/movies':
-        return "فیلم وسریال"
-      case '/religious':
-        return "مذهبی"
-      case '/sport':
-        return "ورزشی"
-      case '/ayas':
-        return "اختصاصی آیاس"
-      default:
-        return ''
-    }
-  }
   return (
     <>
       <Header />
       <Box
         sx={{
           py: {md: 0 , xs : 2},
-          px: {md: 0, xs : 1},
-          minHeight: '100vh',
           display: { md: 'flex', xs: 'block' },
           justifyContent: 'space-between',
           flexDirection: { xs: 'row-reverse', md: 'row-reverese' },
-          bgcolor : 'linear-gradient(126deg, #101927 0%, #111d2e 46%, #312771 100%)'
-
-
+          // bgcolor : 'linear-gradient(126deg, #101927 0%, #111d2e 46%, #312771 100%)'
           // backgroundImage: { md: `url(bg.jpg)`, xs: '' },
           // backgroundRepeat: 'no-repeat',
           // backgroundSize: 'cover',
@@ -86,14 +62,14 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
         <Box
           sx={{
             my: { xs: 3, md: 0 },
+            py: { xs: 5, md: 0 },
+            px: {xs : 3 , md : 3},
             width: { md: '100%', xs: '100%' },
-            borderRadius: '10px',
-            bgcolor: 'rgba(16,25,39 , 0.8)',
-            p: { md: 3, xs: '30px 0px' },
           }}>
 
           <Typography
             variant='h4'
+            fontWeight={'bold'}
             sx={{ textAlign: 'right', my: 3, visibility: { xs: 'visible', md: 'hidden' } }}>
             {titleSelector(query)}
           </Typography>
@@ -113,6 +89,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
                       <Box
                         sx={{
                           borderRadius: '10px',
+                          boxShadow : 3,
                           height: { md: '150px', xs: '50px' },
                           border: '1px solid white',
                           overflow: 'hidden',
@@ -123,7 +100,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
                           cursor: 'pointer',
                           pt: { md: 5, xs: 1 },
                           '&:hover': {
-                            bgcolor: '#9FEF00'
+                            border: '1px solid #ED0F50',
                           },
                           direction: 'rtl'
                         }}

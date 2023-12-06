@@ -1,6 +1,6 @@
 @font-face {
   font-family: casa;
-  src: url(../../public/lalezar.ttf);
+  src: url(../../public/sansx.ttf);
 }
 
 
@@ -20,7 +20,7 @@ body {
 }
 
 body {
-  background-color: #101927;
+  background-color: #FFFFFF;
 }
 
 a {
@@ -28,7 +28,7 @@ a {
   text-decoration: none;
 }
 p , h1 ,h2 ,h3 ,h4 ,h5 ,h6{
-  color: white;
+  color: black;
 }
 
 ::-webkit-scrollbar {

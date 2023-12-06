@@ -29,7 +29,7 @@ const Header: FC = () => {
         alignItems: 'center',
         mx: 'auto',
         zIndex: '111',
-        bgcolor: '#101927',
+        bgcolor: '#FFFFFF',
         boxShadow: 3,
         position : 'fixed'
 
@@ -55,8 +55,9 @@ const Header: FC = () => {
                       textAlign: 'center',
                       transition: '500ms',
                       cursor: 'pointer',
-                      color: router.pathname === item.url ? '#9FEF00' : 'white',
-                      "&:hover": { color: '#9FEF00' }
+
+                      color: router.pathname === item.url ? '#ED0F50' : 'black',
+                      "&:hover": { color: '#ED0F50' }
                     }}>
                     {item.title}
                   </Typography>
