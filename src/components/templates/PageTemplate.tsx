@@ -135,7 +135,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
                 ))
                 :
                 <Box sx={{ width: '50px', mx: 'auto', mt: "20%", height: '150px' }}>
-                  <CircularProgress color="primary" />
+                  <CircularProgress color="error" />
                 </Box>
             }
           </Grid>

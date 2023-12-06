@@ -1,5 +1,5 @@
 import Header from "@/components/header-section/Header"
-import { Box, Button, Divider, Typography, Grid } from "@mui/material";
+import { Box, Button, Divider, Typography, Grid, Skeleton } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -98,12 +98,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                 </Box>
 
                 :
-                <Box sx={{ mt: '5%', display: { xs: 'none', md: "block" }, height: '40vh' , textAlign : 'center' }}>
-
-                  <Image src={'/nf.svg'} height={150} width={150} alt='' objectFit="contain" />
-                  <Typography variant='h6'> موردی برای نمایش وجود ندارد </Typography>
-                </Box>
-
+                <Skeleton variant="rectangular" width={210} height={118} />
             }
 
 
