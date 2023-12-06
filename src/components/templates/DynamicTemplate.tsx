@@ -48,7 +48,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
       };
     }
     getData();
-  }, [datas]);
+  }, []);
 
 
   return (

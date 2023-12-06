@@ -42,7 +42,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
       };
     }
     getData();
-  }, [datas]);
+  }, []);
 
   return (
     <>
