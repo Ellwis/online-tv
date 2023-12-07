@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Grid, Typography } from '@mui/material'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState ,useContext } from 'react'
 import "node_modules/video-react/dist/video-react.css";
 import Image from 'next/image';
 import Header from '@/components/header-section/Header';
@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { IpContext } from '@/context/LocationContext';
 
 
 interface DataType {
@@ -31,7 +32,7 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
   const [datas, setDatas] = useState<DataType[]>([]);
   const router = useRouter()
   const query = router.pathname
-
+const location = useContext(IpContext)
 
 
   useEffect(() => {
@@ -40,6 +41,7 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
         const response = await axios.get(`${reqURL}`);
         const json = await response.data;
         setDatas(json);
+        toast.success(location)
       } catch (err: unknown) {
         toast.error('مشکل در دریافت اطلاعت');
       };
