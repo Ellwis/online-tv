@@ -1,20 +1,22 @@
 import { Box, Button, TextField, Typography, } from "@mui/material";
 import Link from "next/link";
-import { FC, useState } from "react";
+import { FC, useState  , useContext} from "react";
 import DrawerCustom from "./Drawer";
 import { useRouter } from "next/router";
+import { IpContext } from "@/context/LocationContext";
 
 const Header: FC = () => {
   const router = useRouter()
+  const location = useContext(IpContext)
   const headerTitles = [
-    { title: 'ماهواره', url: '/satellite' },
-    { title: 'اختصاصی آیاس', url: '/ayas' },
-    { title: 'فیلم و سریال', url: '/movies' },
-    { title: 'مذهبی', url: '/religious' },
-    { title: 'ورزشی', url: '/sport' },
-    { title: 'صدا و سیما', url: '/irib' },
-    { title: 'صفحه اصلی', url: '/' },
-  ]
+    { title: 'ماهواره', url: '/satellite'  , display :location === "Iran"? 'none' : 'block'},
+    { title: 'اختصاصی آیاس', url: '/ayas' , display : 'block' },
+    { title: 'فیلم و سریال', url: '/movies'  , display : 'block'},
+    { title: 'مذهبی', url: '/religious' , display : 'block' },
+    { title: 'ورزشی', url: '/sport' , display : 'block' },
+    { title: 'صدا و سیما', url: '/irib'  , display : 'block'},
+    { title: 'صفحه اصلی', url: '/' , display : 'block' },
+    ]
 
 
 
@@ -48,7 +50,7 @@ const Header: FC = () => {
         >
           {
             headerTitles.map((item, i) => (
-                <Link key={i} href={item.url}>
+                <Link key={i} href={item.url} style={{display : item.display}}>
                   <Typography
                     sx={{
                       textAlign: 'center',
