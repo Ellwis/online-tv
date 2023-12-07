@@ -74,7 +74,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         style={{ margin: 'auto' }}
                         playing
                         controls
-                        onError={() => toast.error('مشکل در بارگذاری ')}
+                        // onError={() => toast.error('مشکل در بارگذاری ')}
                       />
 
                     </Box>
@@ -113,7 +113,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
             boxShadow: 3,
             mx: 'auto',
             width: { md: '25%', xs: '100%' },
-            height: {xs : '400px', md : '500px'},
+            height: {xs : '39vh', md : '500px'},
             borderRadius: '10px',
             textAlign: 'center',
             overflow: 'scroll',
