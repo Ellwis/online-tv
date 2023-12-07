@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { IpContext } from '@/context/LocationContext';
+// import { IpContext } from '@/context/LocationContext';
 
 
 interface DataType {
@@ -32,7 +32,7 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
   const [datas, setDatas] = useState<DataType[]>([]);
   const router = useRouter()
   const query = router.pathname
-const location = useContext(IpContext)
+// const location = useContext(IpContext)
 
 
   useEffect(() => {

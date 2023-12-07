@@ -3,13 +3,13 @@ import Link from "next/link";
 import { FC, useState  , useContext} from "react";
 import DrawerCustom from "./Drawer";
 import { useRouter } from "next/router";
-import { IpContext } from "@/context/LocationContext";
+// import { IpContext } from "@/context/LocationContext";
 
 const Header: FC = () => {
   const router = useRouter()
-  const location = useContext(IpContext)
+  // const location = useContext(IpContext)
   const headerTitles = [
-    { title: 'ماهواره', url: '/satellite'  , display :location === "Iran"? 'none' : 'block'},
+    { title: 'ماهواره', url: '/satellite'  , display :'block'},
     { title: 'اختصاصی آیاس', url: '/ayas' , display : 'block' },
     { title: 'فیلم و سریال', url: '/movies'  , display : 'block'},
     { title: 'مذهبی', url: '/religious' , display : 'block' },

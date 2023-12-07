@@ -9,16 +9,16 @@ import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
-import { IpContext } from '@/context/LocationContext';
+// import { IpContext } from '@/context/LocationContext';
 
 
 
 const DrawerCustom = ()=> {
   const router = useRouter()
   const [DrawerOpen, setDrawerOpen] = useState(false);
-  const location = useContext(IpContext)
+  // const location = useContext(IpContext)
   const headerTitles = [
-    { title: 'ماهواره', url: '/satellite'  , display :location === "Iran"? 'none' : 'block'},
+    { title: 'ماهواره', url: '/satellite'  , display :'block'},
     { title: 'اختصاصی آیاس', url: '/ayas' , display : 'block' },
     { title: 'فیلم و سریال', url: '/movies'  , display : 'block'},
     { title: 'مذهبی', url: '/religious' , display : 'block' },

@@ -41,7 +41,6 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
         const response = await axios.get(`${reqURL}`);
         const json = await response.data;
         setDatas(json);
-        // console.log(allDatas)
 
       } catch (err) {
         toast.error('مشکل در دریافت اطلاعات');
@@ -54,12 +53,12 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
   return (
     <>
       <Header />
-      <Box p={4} >
+      <Box sx={{ p: { md: 4, xs: 0 } }} >
         <Box sx={{ pt: 8, display: { md: 'flex', xs: 'block' }, justifyContent: 'space-between' }}>
           {/* {VIDEO SECTION} */}
 
           <Box
-            sx={{ boxShadow: 3, width: { md: '73%', xs: '100%' }, borderRadius: '10px', p: 3 }}>
+            sx={{ boxShadow: { md: 3, xs: 0 }, width: { md: '73%', xs: '100%' }, borderRadius: '10px', p: { xs: 0, md: 3 } }}>
             {
               detail?.channelurl ?
                 <Box>
@@ -70,7 +69,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                     }}>
                       <ReactPlayer
                         url={detail.channelurl}
-                        width={'90%'}
+                        width={'100%'}
                         height={'100%'}
                         style={{ margin: 'auto' }}
                         playing
@@ -87,8 +86,8 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                           direction: 'rtl',
                           textAlign: 'right',
                           m: 5,
-                          fontSize: { md: '16px', xs: '12px' },
-                          width: '50%'
+                          fontSize: { md: '16px', xs: '16px' },
+                          width: '100%'
                         }}>{detail?.title}</Typography>
 
                       {detail?.urlImage ?
@@ -107,14 +106,17 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
 
           </Box>
 
+          <Box sx={{bgcolor : '#ED0F50', display  : { md : 'none' , xs : 'block'}  ,color : 'white' , borderRadius : '10px 0px'}}>
+            <Typography variant="h5" textAlign={'center'} color={'white'}>پیشنهاد</Typography>
+          </Box>
           <Box sx={{
             boxShadow: 3,
+            mx: 'auto',
             width: { md: '25%', xs: '100%' },
-            height: '500px',
+            height: {xs : '400px', md : '500px'},
             borderRadius: '10px',
             textAlign: 'center',
             overflow: 'scroll',
-            mt: { xs: 2, md: 0 },
           }}>
             {
               datas
