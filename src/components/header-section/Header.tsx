@@ -48,7 +48,6 @@ const Header: FC = () => {
         >
           {
             headerTitles.map((item, i) => (
-              <>
                 <Link key={i} href={item.url}>
                   <Typography
                     sx={{
@@ -63,7 +62,6 @@ const Header: FC = () => {
                   </Typography>
                 </Link>
 
-              </>
 
             ))
           }

@@ -3,7 +3,7 @@ import { Box, Button, Divider, Typography, Grid, Skeleton } from "@mui/material"
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import {  textSpliterLimit, titleSelector } from './functions'
+import { textSpliterLimit, titleSelector } from './functions'
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react'
 import toast from "react-hot-toast";
@@ -56,6 +56,8 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
       <Header />
       <Box p={4} >
         <Box sx={{ pt: 8, display: { md: 'flex', xs: 'block' }, justifyContent: 'space-between' }}>
+          {/* {VIDEO SECTION} */}
+
           <Box
             sx={{ boxShadow: 3, width: { md: '73%', xs: '100%' }, borderRadius: '10px', p: 3 }}>
             {
@@ -71,6 +73,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         width={'90%'}
                         height={'100%'}
                         style={{ margin: 'auto' }}
+                        playing
                         controls
                         onError={() => toast.error('مشکل در بارگذاری ')}
                       />
@@ -88,7 +91,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                           width: '50%'
                         }}>{detail?.title}</Typography>
 
-                      {detail?.urlImage.length !== 0 ?
+                      {detail?.urlImage ?
                         <img src={detail?.urlImage} width={40} height={40} alt="logo" style={{ borderRadius: '50%' }} />
                         :
                         null}
@@ -98,12 +101,11 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                 </Box>
 
                 :
-                <Skeleton variant="rectangular" width={'100%'} height={'100%'}/>
+                <Skeleton variant="rectangular" width={'100%'} height={'100%'} />
             }
 
 
           </Box>
-          {/* {VIDEO SECTION} */}
 
           <Box sx={{
             boxShadow: 3,
@@ -116,14 +118,14 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
           }}>
             {
               datas
-                .filter((data , i) => data.type === "m3u8" || data.type === 'mp4' && datas.indexOf(data) === i)
+                .filter((data) => data.type === "m3u8" || data.type === 'mp4')
                 .map((data, i) => (
                   <Box p={1} key={i}>
                     <Link href={`${data.id}`}>
                       <Typography sx={{
                         borderRadius: '5px',
                         // boxShadow: 1,
-                        px : 3 ,
+                        px: 3,
                         pt: 1,
                         height: '50px',
                         transition: '500ms',
@@ -136,7 +138,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         direction: 'rtl'
                       }}
                       >
-                            {textSpliterLimit(data.title , 30 )}
+                        {textSpliterLimit(data.title, 30)}
                       </Typography>
                     </Link>
 
