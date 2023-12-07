@@ -1,7 +1,4 @@
 import TemplatePage from '../templates/PageTemplate';
-import axios from 'axios'
-import Cookies from 'js-cookie';
-import { useContext, useEffect, useState } from 'react'
 
 
 const SatellitePage = () => {

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useContext, createContext, useState, ReactNode } from 'react';
+import toast from 'react-hot-toast';
 
 export const IpContext = createContext('');
 
@@ -14,8 +15,9 @@ const LocationContext: React.FC<LocationContextProps> = ({ children }) => {
     const ipDetector = async () => {
       try {
         const res = await axios.get('http://ip-api.com/json/');
-        const country = res.data.country;
+        const country = await res.data.country;
         setLocation(country);
+        toast.success(country)
         console.log(country);
       } catch {
         console.error('Error during IP detection');
