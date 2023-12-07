@@ -1,4 +1,4 @@
-import { Box, ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import { Box, ImageList, ImageListItem, ImageListItemBar, Typography } from "@mui/material";
 import Link from "next/link";
 
 const itemData = [
@@ -30,12 +30,10 @@ const itemData = [
 const ImagesListSection = () => {
   return (
     <Box sx={{
-      // backgroundImage: { md: 'url(https://giphy.com/embed/kg19fN5BXbZGIDznzG)', xs: 'none' },
-      // backgroundRepeat: 'no-repeat',
-      // backgroundSize: 'cover',
-      pt: { md: 5, xs: 5 },
+      pt: { md: 5, xs: 0 },
     }}>
-      <Box sx={{ pt: 5, width: { xs: '90%', md: '80%' }, mx: 'auto', textAlign: 'right', height: { md: '100vh' } }}>
+      <Box sx={{ width: { xs: '90%', md: '80%' }, mx: 'auto', textAlign: 'right', height: { md: '100vh' } }}>
+      <Typography variant="h5" p={3}>دسته بندی ها </Typography>
         {/* Desktop */}
         <ImageList sx={{ display: { xs: 'none', md: 'block' } }} variant="masonry" cols={4} gap={20}>
           {itemData.map((item , i ) => (
