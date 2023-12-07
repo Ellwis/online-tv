@@ -80,7 +80,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                     </Box>
                     <Divider sx={{ my: 1 }} />
 
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' , mx : 3 }}>
                       <Typography variant='h6'
                         sx={{
                           direction: 'rtl',
