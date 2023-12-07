@@ -98,7 +98,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                 </Box>
 
                 :
-                <Skeleton variant="rectangular" width={210} height={118} />
+                <Skeleton variant="rectangular" width={'100%'} height={'100%'}/>
             }
 
 
@@ -115,7 +115,8 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
             mt: { xs: 2, md: 0 },
           }}>
             {
-              datas.filter((data) => data.type === "m3u8" || data.type === 'mp4')
+              datas
+                .filter((data , i) => data.type === "m3u8" || data.type === 'mp4' && datas.indexOf(data) === i)
                 .map((data, i) => (
                   <Box p={1} key={i}>
                     <Link href={`${data.id}`}>

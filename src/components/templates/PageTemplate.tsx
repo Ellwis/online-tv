@@ -82,7 +82,7 @@ const TemplatePage = ({ reqURL, bgImage, link }: Input) => {
             {
               datas.length !== 0 ?
                 datas
-                .filter((data)=>data.type === "m3u8" || data.type === 'mp4')
+                .filter((data) => data.type === "m3u8" || data.type === 'mp4')
                 .map((data, i) => (
                   <Grid item xs={12} md={2} key={i} sx={{ height: { md: '150px', xs: '30px' }, my: 2 }}>
                     <Link href={`${link}/${data.id}`}>

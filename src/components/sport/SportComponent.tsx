@@ -9,7 +9,7 @@ const SportPage = () => {
       <TemplatePage
         bgImage='/sport3.jpg'
         link='sport'
-        reqURL='https://ayas.ir/server/gettv.php?filter=sport'
+        reqURL='https://raw.githubusercontent.com/ayastv/tv/main/gettvsport.json'
       />
     </>
   );

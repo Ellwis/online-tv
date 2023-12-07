@@ -9,7 +9,7 @@ const IribPage = () => {
       <TemplatePage
         bgImage='/irib.jpg'
         link='irib'
-        reqURL='https://ayas.ir/server/gettv.php?filter=tv'
+        reqURL='https://raw.githubusercontent.com/ayastv/tv/main/gettvTV.json'
       />
     </>
   );

@@ -9,7 +9,7 @@ const MoviesPage = () => {
       <TemplatePage
         bgImage='/movies.jpg'
         link='movies'
-        reqURL='https://ayas.ir/server/gettv.php?filter=film'
+        reqURL='https://raw.githubusercontent.com/ayastv/tv/main/gettvFilm.json'
       />
     </>
   );

@@ -9,7 +9,7 @@ const SatellitePage = () => {
       <TemplatePage
         bgImage='/sat.jpg'
         link='satellite'
-        reqURL='https://ayas.ir/server/gettv.php?filter=sat'
+        reqURL='https://raw.githubusercontent.com/ayastv/tv/main/gettvsat.json'
       />
     </>
   );
