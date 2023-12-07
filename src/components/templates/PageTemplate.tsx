@@ -41,7 +41,7 @@ const location = useContext(IpContext)
         const response = await axios.get(`${reqURL}`);
         const json = await response.data;
         setDatas(json);
-        toast.success(location)
+        toast.success(location.toString())
       } catch (err: unknown) {
         toast.error('مشکل در دریافت اطلاعت');
       };
