@@ -106,7 +106,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
 
           </Box>
 
-          <Box sx={{bgcolor : '#ED0F50', display  : { md : 'none' , xs : 'block'}  ,color : 'white' , borderRadius : '10px 0px'}}>
+          <Box sx={{bgcolor : '#ED0F50', display  : { md : 'none' , xs : 'block'}  ,color : 'white' , borderRadius : '40px 0px'}}>
             <Typography variant="h5" textAlign={'center'} color={'white'}>پیشنهاد</Typography>
           </Box>
           <Box sx={{
