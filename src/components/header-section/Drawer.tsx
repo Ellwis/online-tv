@@ -37,7 +37,9 @@ const DrawerCustom = ()=> {
           headerTitles.map((item, i) => (
 
             <Link key={i} href={item.url} style={{display : item.display}}>
-              <ListItem button sx={{ bgcolor: router.pathname === item.url ? '#ED0F50' : '' }}>
+              <ListItem 
+              button 
+              sx={{ bgcolor: router.pathname === item.url ? '#ED0F50' : '' , color : router.pathname === item.url ? 'white' : 'black'  }}>
                 <ListItemText
                   sx={{ textAlign: 'center' }}
                   primary={item.title}
