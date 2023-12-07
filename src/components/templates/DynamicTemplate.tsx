@@ -113,7 +113,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
             boxShadow: 3,
             mx: 'auto',
             width: { md: '25%', xs: '100%' },
-            height: {xs : '39vh', md : '500px'},
+            height: {xs : '36vh', md : '500px'},
             borderRadius: '10px',
             textAlign: 'center',
             overflow: 'scroll',
@@ -125,16 +125,17 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                   <Box p={1} key={i}>
                     <Link href={`${data.id}`}>
                       <Typography sx={{
-                        borderRadius: '5px',
-                        // boxShadow: 1,
+
                         px: 3,
                         pt: 1,
                         height: '50px',
-                        transition: '500ms',
+                        transition: '300ms',
+                        // borderBottom :{ xs : '1px solid #ED0F50' , md : '0px solid'},
                         width: '100%',
                         textAlign: { xs: 'right', md: 'center' },
                         '&:hover': {
-                          color: 'red'
+                          color: 'white' ,
+                          bgcolor : '#ED0F50'
 
                         },
                         direction: 'rtl'
