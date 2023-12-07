@@ -3,7 +3,7 @@ import { Box, Button, Divider, Typography, Grid, Skeleton } from "@mui/material"
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { textSpliter, titleSelector } from './functions'
+import {  textSpliterLimit, titleSelector } from './functions'
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react'
 import toast from "react-hot-toast";
@@ -123,6 +123,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                       <Typography sx={{
                         borderRadius: '5px',
                         // boxShadow: 1,
+                        px : 3 ,
                         pt: 1,
                         height: '50px',
                         transition: '500ms',
@@ -134,7 +135,9 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         },
                         direction: 'rtl'
                       }}
-                      >{textSpliter(data.title)}</Typography>
+                      >
+                            {textSpliterLimit(data.title , 30 )}
+                      </Typography>
                     </Link>
 
                   </Box>

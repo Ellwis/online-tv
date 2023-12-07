@@ -1,5 +1,5 @@
-export const textSpliter = (text: string) => {
-  return text.length > 30 ? text.slice(0, 20) + '...' : text
+export const textSpliterLimit = (text: string , lim : number) => {
+  return text.length > 30 ? text.slice(0, lim) + '...' : text
 }
 export const titleSelector = (item: string) => {
   switch (item) {
