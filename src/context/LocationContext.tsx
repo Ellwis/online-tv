@@ -10,17 +10,30 @@ interface LocationContextProps {
 
 const LocationContext: React.FC<LocationContextProps> = ({ children }) => {
   const [location, setLocation] = useState('');
+  const [ip, setIp] = useState('');
 
   useEffect(() => {
     const ipDetector = async () => {
       try {
-        const res = await axios.get('http://ip-api.com/json/');
-        const country = await res.data.country;
-        setLocation(country);
-        toast.success(country)
-        console.log(country);
-      } catch {
-        console.error('Error during IP detection');
+        const getIp = await axios.get(`https://api.ipify.org`);
+        const res = await getIp.data;
+        setIp(res)
+      } catch(err) {
+        console.error(err);
+      }
+    };
+    ipDetector();
+  }, []);
+  useEffect(() => {
+    const ipDetector = async () => {
+      try {
+        const getIp = await axios.get(`http://ip-api.com/json/${ip}`);
+        const res = await getIp.data.country;
+         console.log(res)
+        setLocation(res)
+        toast.success(res)
+      } catch(err) {
+        console.error(err);
       }
     };
     ipDetector();
