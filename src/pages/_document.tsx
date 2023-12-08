@@ -1,9 +1,20 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Main, NextScript, Head } from 'next/document'
+import Link from 'next/link';
+import Script from 'next/script';
+
 
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        <Link href={'/ayas.png'} />
+        <title> تلوزیون آنلاین ایاس پ | AYAS TV</title>
+        <meta
+          name="description"
+          content="تماشای آنلاین انیمیشن ، فیلم ، سریال ، و مسابقات ورزشی"
+        />
+        <link rel='icon' href='/ayas.png' sizes='any' type='image'/>
+      </Head>
       <body>
         <Main />
         <NextScript />

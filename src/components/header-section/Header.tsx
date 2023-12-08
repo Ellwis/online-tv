@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FC, useState  , useContext} from "react";
 import DrawerCustom from "./Drawer";
 import { useRouter } from "next/router";
+import Image from "next/image";
 // import { IpContext } from "@/context/LocationContext";
 
 const Header: FC = () => {
@@ -43,19 +44,23 @@ const Header: FC = () => {
             mx: 'auto',
             textAlign: 'center',
             display: 'flex',
-            justifyContent: 'space-evenly',
-            visibility: { md: 'visible', xs: 'hidden' }
+            justifyContent: 'center',
+            alignItems : 'center' ,
+            flexDirection : 'row-reverse'
           }}
-
-        >
+          
+          >
           {
             headerTitles.map((item, i) => (
-                <Link key={i} href={item.url} style={{display : item.display}}>
+              <Link key={i} href={item.url} style={{display : item.display}}>
                   <Typography
                     sx={{
+                      visibility: { md: 'visible', xs: 'hidden' },
                       textAlign: 'center',
+                      fontSize : '16px' ,
                       transition: '500ms',
                       cursor: 'pointer',
+                      mx : 3,
 
                       color: router.pathname === item.url ? '#FF4C29' : 'black',
                       "&:hover": { color: '#FF4C29' }

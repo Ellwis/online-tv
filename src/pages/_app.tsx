@@ -7,6 +7,9 @@ import CheckConnection from '@/context/CheckConnection';
 import ReactGA from 'react-ga'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Head from 'next/head';
+import Script from 'next/script';
+
 
 
 
@@ -23,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     ReactGA.initialize(GA_TRACKING_ID);
     // Report page view
-    const handleRouteChange = (url :string) => {
+    const handleRouteChange = (url: string) => {
       ReactGA.pageview(url);
     };
     // Track the initial page view
@@ -40,10 +43,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     // <LocationProvider>
-      <ThemeProvider theme={theme}>
-        <Toaster position='top-center' />
-        <CheckConnection props={<Component {...pageProps} />} key={null} type={''} />
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+
+      <Toaster position='top-center' />
+      <CheckConnection props={<Component {...pageProps} />} key={null} type={''} />
+    </ThemeProvider>
     // </LocationProvider>
 
 
