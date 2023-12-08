@@ -16,7 +16,6 @@ const Images = [
 ]
 const Slider = () => {
   return (
-    <Zoom in style={{ transitionDelay: '500ms' }}>
 
       <Box py={10} >
         <Swiper
@@ -41,7 +40,6 @@ const Slider = () => {
         </Swiper>
 
       </Box>
-    </Zoom>
   );
 }
 
