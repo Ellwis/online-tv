@@ -1,6 +1,6 @@
-import { Box, CircularProgress, Grid, Typography } from '@mui/material'
+import { Backdrop, Box, CircularProgress, Grid, Typography, Zoom } from '@mui/material'
 import axios from 'axios'
-import { useEffect, useState ,useContext } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import "node_modules/video-react/dist/video-react.css";
 import Image from 'next/image';
 import Header from '@/components/header-section/Header';
@@ -32,7 +32,7 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
   const [datas, setDatas] = useState<DataType[]>([]);
   const router = useRouter()
   const query = router.pathname
-// const location = useContext(IpContext)
+  // const location = useContext(IpContext)
 
 
   useEffect(() => {
@@ -58,11 +58,6 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
           display: { md: 'flex', xs: 'block' },
           justifyContent: 'space-between',
           flexDirection: { xs: 'row-reverse', md: 'row-reverese' },
-          // bgcolor : 'linear-gradient(126deg, #101927 0%, #111d2e 46%, #312771 100%)'
-          // backgroundImage: { md: `url(bg.jpg)`, xs: '' },
-          // backgroundRepeat: 'no-repeat',
-          // backgroundSize: 'cover',
-          // backgroundPositionX : '60%'
         }}>
         <Box
           sx={{
@@ -89,59 +84,64 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
                 datas
                   .filter((data) => data.type === "m3u8" || data.type === 'mp4')
                   .map((data, i) => (
-                    <Grid item xs={12} md={2} key={i} sx={{ height: { md: '150px', xs: '30px' }, my: 2 }}>
-                      <Link href={`${link}/${data.id}`}>
-                        <Box
-                          sx={{
-                            borderRadius: '10px',
-                            boxShadow: 3,
-                            height: { md: '150px', xs: '50px' },
-                            border: '1px solid white',
-                            overflow: 'hidden',
-                            transition: '500ms',
-                            width: '100%',
-                            textAlign: { xs: 'right', md: 'center' },
-                            alignItems: 'center',
-                            cursor: 'pointer',
-                            pt: { md: 5, xs: 1 },
-                            '&:hover': {
-                              border: '1px solid #ED0F50',
-                            },
-                            direction: 'rtl'
-                          }}
-                        >
-                          <Box>
-                            <Typography
-                              sx={{
-                                fontSize: { xs: '14px', md: '16px' },
-                                mt: { xs: 1, md: 2 },
-                                mx: { xs: 3, md: 0 }
-                              }}>
-                              <span style={{ margin: '0px 10px' }}>
-                                {
-                                  data.isOnline === '1' ?
-                                    <Image src={'/green.png'} height={10} width={10} alt='green' />
-                                    :
-                                    <Image src={'/red.png'} height={10} width={10} alt='red' />
+                    <Zoom in style={{transitionDelay :`${i}00ms`}}>
+                      <Grid item xs={12} md={2} key={i} sx={{height: { md: '150px', xs: '30px' }, my: 2 }}>
+                        <Link href={`${link}/${data.id}`}>
+                          <Box
+                            sx={{
+                              borderRadius: '10px',
+                              boxShadow: 3,
+                              height: { md: '150px', xs: '50px' },
+                              border: '1px solid white',
+                              overflow: 'hidden',
+                              transition: '500ms',
+                              width: '100%',
+                              textAlign: { xs: 'right', md: 'center' },
+                              alignItems: 'center',
+                              cursor: 'pointer',
+                              pt: { md: 5, xs: 1 },
+                              '&:hover': {
+                                border: '1px solid #ED0F50',
+                              },
+                              direction: 'rtl'
+                            }}
+                          >
+                            <Box>
+                              <Typography
+                                sx={{
+                                  fontSize: { xs: '14px', md: '16px' },
+                                  mt: { xs: 1, md: 2 },
+                                  mx: { xs: 3, md: 0 }
+                                }}>
+                                <span style={{ margin: '0px 10px' }}>
+                                  {
+                                    data.isOnline === '1' ?
+                                      <Image src={'/green.png'} height={10} width={10} alt='green' />
+                                      :
+                                      <Image src={'/red.png'} height={10} width={10} alt='red' />
 
 
-                                }
+                                  }
 
-                              </span>
-                              {textSpliterLimit(data.title, 30)}
-                            </Typography>
+                                </span>
+                                {textSpliterLimit(data.title, 30)}
+                              </Typography>
+                            </Box>
                           </Box>
-                        </Box>
-                      </Link>
+                        </Link>
 
-                    </Grid>
+                      </Grid>
+                    </Zoom>
 
 
                   ))
                 :
-                <Box sx={{ width: '50px', mx: 'auto', mt: "20%", height: '150px' }}>
-                  <CircularProgress color="error" />
-                </Box>
+                <Backdrop
+                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                  open={!datas.length}
+                >
+                  <CircularProgress color="inherit" />
+                </Backdrop>
             }
           </Grid>
 

@@ -1,5 +1,11 @@
 import { Box, ImageList, ImageListItem, ImageListItemBar, Typography } from "@mui/material";
 import Link from "next/link";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
+
 
 const itemData = [
   {
@@ -29,68 +35,8 @@ const itemData = [
 
 const ImagesListSection = () => {
   return (
-    <Box sx={{
-      pt: { md: 5, xs: 0 },
-    }}>
-      <Box sx={{ width: { xs: '90%', md: '80%' }, mx: 'auto', textAlign: 'right', height: { md: '100vh' } }}>
-      <Typography variant="h5" p={3}>دسته بندی ها </Typography>
-        {/* Desktop */}
-        <ImageList sx={{ display: { xs: 'none', md: 'block' } }} variant="masonry" cols={4} gap={20}>
-          {itemData.map((item , i ) => (
-            <Link href={item.url} key={i}>
-              <Box
-                sx={{ transition: '500ms', '&:hover': { filter: 'blur(3px) brightness(80%)' }, width: '90%' }}
-              >
-                <ImageListItem
-                  key={item.img}
-                >
-                  <img
-                    src={`${item.img}`}
-                    alt={item.title}
-                  />
-                  <ImageListItemBar sx={{ color: 'white', textAlign: 'center', fontSize: '30px' }} position="top" title={item.title} />
-                </ImageListItem>
-
-              </Box>
-            </Link>
-
-
-          ))}
-
-        </ImageList>
-        {/* Mobile */}
-        <ImageList sx={{ display: { xs: 'block', md: 'none' } }} variant="masonry" cols={2} gap={10}>
-          {itemData.map((item , i) => (
-            <Link href={item.url} key={i}>
-              <Box
-                sx={{
-                  transition: '500ms',
-                  '&:hover': { filter: 'blur(3px) brightness(30%' }
-                }}
-              >
-                <ImageListItem
-                  key={item.img}
-                >
-                  <img
-                    src={`${item.img}`}
-                    alt={item.title}
-                    width={'100%'}
-                    height={'100%'}
-                  />
-                  <ImageListItemBar sx={{ color: 'white', textAlign: 'center', fontSize: '30px' }} position="top" title={item.title} />
-                </ImageListItem>
-
-              </Box>
-            </Link>
-
-
-          ))}
-
-        </ImageList>
-
-      </Box>
-
-    </Box>
+    <>
+    </>
   )
 }
 
