@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 
 import { EffectCards, Pagination } from 'swiper/modules';
-import { Box } from '@mui/material';
+import { Box, Zoom } from '@mui/material';
 
 
 const Images = [
@@ -16,29 +16,32 @@ const Images = [
 ]
 const Slider = () => {
   return (
-    <Box py={10} >
-      <Swiper
-        effect={'cards'}
-        grabCursor={true}
-        modules={[EffectCards]}
-        style={{ textAlign: 'center'}}
+    <Zoom in style={{ transitionDelay: '500ms' }}>
 
-      >
-        {
-          Images.map((img, i) => (
+      <Box py={10} >
+        <Swiper
+          effect={'cards'}
+          grabCursor={true}
+          modules={[EffectCards]}
+          style={{ textAlign: 'center' }}
 
-            <SwiperSlide key={i}>
-              <Box sx={{}}>
-                <img loading='lazy' src={img.url} style={{ borderRadius: '20px' , width : '90%' , height: '80%',}}  alt={img.alt} />
+        >
+          {
+            Images.map((img, i) => (
 
-              </Box>
-            </SwiperSlide>
-          )
-          )
-        }
-      </Swiper>
+              <SwiperSlide key={i}>
+                <Box sx={{}}>
+                  <img loading='lazy' src={img.url} style={{ borderRadius: '20px', width: '90%', height: '80%', }} alt={img.alt} />
 
-    </Box>
+                </Box>
+              </SwiperSlide>
+            )
+            )
+          }
+        </Swiper>
+
+      </Box>
+    </Zoom>
   );
 }
 
