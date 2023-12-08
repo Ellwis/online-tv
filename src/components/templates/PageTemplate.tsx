@@ -101,7 +101,7 @@ const TemplatePage = ({ reqURL, isHide, link }: Input) => {
                               cursor: 'pointer',
                               pt: { md: 5, xs: 1 },
                               '&:hover': {
-                                border: '1px solid #ED0F50',
+                                border: '1px solid #FF4C29',
                               },
                               direction: 'rtl'
                             }}

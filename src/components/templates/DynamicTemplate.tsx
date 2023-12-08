@@ -106,7 +106,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
 
           </Box>
 
-          <Box sx={{bgcolor : '#ED0F50', display  : { md : 'none' , xs : 'block'}  ,color : 'white' , borderRadius : '40px 0px'}}>
+          <Box sx={{bgcolor : '#FF4C29', display  : { md : 'none' , xs : 'block'}  ,color : 'white' , borderRadius : '40px 0px'}}>
             <Typography variant="h5" textAlign={'center'} color={'white'}>پیشنهاد</Typography>
           </Box>
           <Box sx={{
@@ -130,12 +130,12 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         pt: 1,
                         height: '50px',
                         transition: '300ms',
-                        // borderBottom :{ xs : '1px solid #ED0F50' , md : '0px solid'},
+                        // borderBottom :{ xs : '1px solid #FF4C29' , md : '0px solid'},
                         width: '100%',
                         textAlign: { xs: 'right', md: 'center' },
                         '&:hover': {
                           color: 'white' ,
-                          bgcolor : '#ED0F50'
+                          bgcolor : '#FF4C29'
 
                         },
                         direction: 'rtl'

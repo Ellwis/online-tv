@@ -57,8 +57,8 @@ const Header: FC = () => {
                       transition: '500ms',
                       cursor: 'pointer',
 
-                      color: router.pathname === item.url ? '#ED0F50' : 'black',
-                      "&:hover": { color: '#ED0F50' }
+                      color: router.pathname === item.url ? '#FF4C29' : 'black',
+                      "&:hover": { color: '#FF4C29' }
                     }}>
                     {item.title}
                   </Typography>
