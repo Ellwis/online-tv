@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from 'react'
 import toast from "react-hot-toast";
 import ReactPlayer from "react-player";
-
+import ReactJWPlayer from 'react-jw-player-ts';
 
 
 
@@ -65,13 +65,13 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                   <Box>
                     <Box sx={{
                       width: { md: '100%', xs: '100%' },
-                      mx: 'auto'
+                      mx: 'auto', 
                     }}>
                       <ReactPlayer
                         url={detail.channelurl}
                         width={'100%'}
                         height={'100%'}
-                        style={{ margin: 'auto' }}
+                        style={{ margin: 'auto' } }
                         playing
                         controls
                         // onError={() => toast.error('مشکل در بارگذاری ')}
@@ -141,7 +141,7 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         direction: 'rtl'
                       }}
                       >
-                        {textSpliterLimit(data.title, 30)}
+                        {textSpliterLimit(data.title, 25)}
                       </Typography>
                     </Link>
 

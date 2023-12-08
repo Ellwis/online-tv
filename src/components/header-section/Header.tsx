@@ -55,7 +55,7 @@ const Header: FC = () => {
               <Link key={i} href={item.url} style={{display : item.display}}>
                   <Typography
                     sx={{
-                      visibility: { md: 'visible', xs: 'hidden' },
+                      display: { md: 'block', xs: 'none' },
                       textAlign: 'center',
                       fontSize : '16px' ,
                       transition: '500ms',
