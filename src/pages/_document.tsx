@@ -8,7 +8,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <Link href={'/ayas.png'} />
-        <title> تلوزیون آنلاین ایاس پ | AYAS TV</title>
+        <title>تلوزیون آنلاین ایاس  | AYAS TV</title>
         <meta
           name="description"
           content="تماشای آنلاین انیمیشن ، فیلم ، سریال ، و مسابقات ورزشی"
