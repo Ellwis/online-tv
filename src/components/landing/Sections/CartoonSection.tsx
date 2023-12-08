@@ -42,7 +42,8 @@ const CartoonSection = () => {
           <Box
           key={i}
             sx={{
-              width: { md: '22%', xs: '100%' },
+              width: { md: '22%', xs: '70%' },
+              mx: 'auto' , 
               mb: { xs: 2 },
               boxShadow :3,
               borderRadius : '10px'
