@@ -681,10 +681,10 @@ hasown@^2.0.0:
   dependencies:
     function-bind "^1.1.2"
 
-hls.js@^1.0.11, hls.js@^1.3.1:
-  version "1.4.12"
-  resolved "https://registry.npmjs.org/hls.js/-/hls.js-1.4.12.tgz"
-  integrity sha512-1RBpx2VihibzE3WE9kGoVCtrhhDWTzydzElk/kyRbEOLnb1WIE+3ZabM/L8BqKFTCL3pUy4QzhXgD1Q6Igr1JA==
+hls.js@^1.0.11, hls.js@^1.3.1, hls.js@^1.4.13:
+  version "1.4.13"
+  resolved "https://registry.npmjs.org/hls.js/-/hls.js-1.4.13.tgz"
+  integrity sha512-7QGXXS0u/vu0mQqNPRBKR31ru4BLVabVSOnGaXoQZhMRNbfCNTPNJk9ToC0pzvRUfLK/71QjhQO2wdHrgbKeKg==
 
 hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
@@ -1035,6 +1035,11 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
+react-tuby@^0.1.24:
+  version "0.1.24"
+  resolved "https://registry.npmjs.org/react-tuby/-/react-tuby-0.1.24.tgz"
+  integrity sha512-NbCZSgzzeP1vnXpeb6mWlTmIbJVYcputd7Sck14ZN12mREO+IndPQHLfDL3S/l1CKuualFyK+fvpoq79EyYx0A==
+
 "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.6.2 || ^16.0 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^17.0.0 || ^18.0.0", react@^18.1.0, react@^18.2.0, "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16, react@>=16.0.0, react@>=16.6.0, react@>=16.8, react@>=16.8.0, react@>=17.0.2, react@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
@@ -1218,6 +1223,11 @@ video-react@^0.16.0:
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"
     redux "^4.0.1"
+
+vnetwork-player@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.npmjs.org/vnetwork-player/-/vnetwork-player-1.1.12.tgz"
+  integrity sha512-snSVmvyrtwP2oYeQ1XiMlNExbaV2KRVtGV4FpDBRAAvTh5Gnsa5LTba92L/A7FYUbNfaIU8ATLk/BHUS4DSJJQ==
 
 watchpack@2.4.0:
   version "2.4.0"
