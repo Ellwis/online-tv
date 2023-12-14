@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const itemData = [
   {
@@ -22,8 +24,13 @@ const itemData = [
 
 
 const MoviesSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
-    <Box>
+    <Box
+    data-aos="zoom-in-up"
+    >
       <Typography
         variant='h3'
         sx={{

@@ -1,5 +1,7 @@
 import { Box, ImageList, ImageListItem, ImageListItemBar, Typography } from "@mui/material";
-import * as React from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const itemData = [
@@ -22,8 +24,13 @@ const itemData = [
 ];
 
 const CartoonSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
+
     <Box
+
       sx={{
         width: '100%',
         display: { md: 'flex', xs: 'block' },
@@ -40,13 +47,14 @@ const CartoonSection = () => {
         itemData.map((item, i) => (
 
           <Box
-          key={i}
+            data-aos="zoom-in-up"
+            key={i}
             sx={{
               width: { md: '22%', xs: '70%' },
-              mx: 'auto' , 
+              mx: 'auto',
               mb: { xs: 2 },
-              boxShadow :3,
-              borderRadius : '10px'
+              boxShadow: 3,
+              borderRadius: '10px'
 
 
             }}

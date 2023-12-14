@@ -5,12 +5,10 @@ import "node_modules/video-react/dist/video-react.css";
 import Image from 'next/image';
 import Header from '@/components/header-section/Header';
 import { textSpliterLimit, titleSelector } from './functions'
-// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-// import { IpContext } from '@/context/LocationContext';
 
 
 interface DataType {

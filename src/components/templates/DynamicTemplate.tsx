@@ -1,14 +1,15 @@
 import Header from "@/components/header-section/Header"
-import { Box, Button, Divider, Typography, Grid, Skeleton } from "@mui/material";
+import { Box, Button, Divider, Typography, Grid, Skeleton, CircularProgress } from "@mui/material";
 import axios from "axios";
-import Image from "next/image";
+import JoLPlayer from "jol-player";
 import Link from "next/link";
 import { textSpliterLimit, titleSelector } from './functions'
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react'
 import toast from "react-hot-toast";
 import ReactPlayer from "react-player";
-import ReactJWPlayer from 'react-jw-player-ts';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -48,12 +49,17 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
     }
     getData();
   }, []);
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
 
   return (
     <>
       <Header />
-      <Box sx={{ p: { md: 4, xs: 0 } }} >
+      <Box sx={{ p: { md: 4, xs: 0 } }}
+        data-aos="zoom-in"
+        data-aos-anchor-placement="center-center">
         <Box sx={{ pt: 8, display: { md: 'flex', xs: 'block' }, justifyContent: 'space-between' }}>
           {/* {VIDEO SECTION} */}
 
@@ -65,22 +71,24 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                   <Box>
                     <Box sx={{
                       width: { md: '100%', xs: '100%' },
-                      mx: 'auto', 
+                      mx: 'auto',
                     }}>
-                      <ReactPlayer
+                       <ReactPlayer
                         url={detail.channelurl}
                         width={'100%'}
                         height={'100%'}
-                        style={{ margin: 'auto' } }
+                        style={{ margin: 'auto' }}
                         playing
                         controls
-                        // onError={() => toast.error('مشکل در بارگذاری ')}
-                      />
+
+
+                      // onError={() => toast.error('مشکل در بارگذاری ')}
+                      /> 
 
                     </Box>
                     <Divider sx={{ my: 1 }} />
 
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' , mx : 3 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 3 }}>
                       <Typography variant='h6'
                         sx={{
                           direction: 'rtl',
@@ -106,14 +114,14 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
 
           </Box>
 
-          <Box sx={{bgcolor : '#FF4C29', display  : { md : 'none' , xs : 'block'}  ,color : 'white' , borderRadius : '40px 0px'}}>
+          <Box sx={{ bgcolor: '#FF4C29', display: { md: 'none', xs: 'block' }, color: 'white', borderRadius: '40px 0px' }}>
             <Typography variant="h5" textAlign={'center'} color={'white'}>پیشنهاد</Typography>
           </Box>
           <Box sx={{
             boxShadow: 3,
             mx: 'auto',
             width: { md: '25%', xs: '100%' },
-            height: {xs : '36vh', md : '500px'},
+            height: { xs: '36vh', md: '500px' },
             borderRadius: '10px',
             textAlign: 'center',
             overflow: 'scroll',
@@ -134,8 +142,8 @@ const DynamicTemplate = ({ reqURL, link }: InputTypes) => {
                         width: '100%',
                         textAlign: { xs: 'right', md: 'center' },
                         '&:hover': {
-                          color: 'white' ,
-                          bgcolor : '#FF4C29'
+                          color: 'white',
+                          bgcolor: '#FF4C29'
 
                         },
                         direction: 'rtl'
