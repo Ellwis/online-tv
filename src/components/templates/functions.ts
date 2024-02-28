@@ -13,8 +13,8 @@ export const titleSelector = (item: string) => {
       return "مذهبی"
     case '/sport':
       return "ورزشی"
-    case '/ayas':
-      return "اختصاصی آیاس"
+    // case '/ayas':
+    //   return "اختصاصی آیاس"
     default:
       return ''
   }

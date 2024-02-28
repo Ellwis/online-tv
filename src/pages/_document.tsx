@@ -7,13 +7,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Link href={'/ayas.png'} />
-        <title>تلوزیون آنلاین ایاس  | AYAS TV</title>
+        {/* <Link href={'/ayas.png'} /> */}
+        <title>International online tv</title>
         <meta
           name="description"
           content="تماشای آنلاین انیمیشن ، فیلم ، سریال ، و مسابقات ورزشی"
         />
-        <link rel='icon' href='/ayas.png' sizes='any' type='image'/>
+        {/* <link rel='icon' href='/ayas.png' sizes='any' type='image'/> */}
       </Head>
       <body>
         <Main />

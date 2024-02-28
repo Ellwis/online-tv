@@ -11,7 +11,7 @@ const Header: FC = () => {
   // const location = useContext(IpContext)
   const headerTitles = [
     { title: 'ماهواره', url: '/satellite'  , display :'block'},
-    { title: 'اختصاصی ایاس', url: '/ayas' , display : 'block' },
+    // { title: 'اختصاصی ایاس', url: '/ayas' , display : 'block' },
     { title: 'فیلم و سریال', url: '/movies'  , display : 'block'},
     { title: 'مذهبی', url: '/religious' , display : 'block' },
     { title: 'ورزشی', url: '/sport' , display : 'block' },
